@@ -1,0 +1,49 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+#define ll long long
+#define pb push_back
+#define rep(i,a,b) for(int i = a;i<b;i++)
+#define rev(i,a,b) for(int i = a;i>b;i--)
+ 
+const long mod = 1000000007;
+ 
+int main(){
+	string s;
+	cin >> s;
+	
+	vector<int> a(26);
+	
+	for(char c : s){
+		a[c - 'A'] ++;
+	}
+	
+	int check = 0,p = -1;
+	rep(i,0,26){
+		check += a[i] & 1;
+		
+		if(a[i] & 1){
+			p = i;
+		}
+	}
+ 
+	if(check > 1){
+		cout << "NO SOLUTION";
+		return 0;
+	}
+	
+	rep(i,0,26){
+		cout << string(a[i]/2, i + 'A');
+	}
+	
+	if(p != -1){
+		cout<< char(p + 'A');
+	}
+	
+	rev(i,25,-1){
+		cout << string(a[i]/2, i + 'A');
+	}
+	
+	
+	return 0;
+}

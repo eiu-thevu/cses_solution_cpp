@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+#define ll long long
+#define pb push_back
+#define rep(i,a,b) for(int i = a;i<b;i++)
+#define rev(i,a,b) for(int i = a;i>b;i--)
+ 
+const long mod = 1000000007;
+ 
+int main(){
+	int n;
+	cin >> n;
+	
+	int arr[n];
+	rep(i,0,n){
+		int a;
+		cin >> a;
+		arr[i] = a;
+	}
+	
+	sort(arr, arr + n);
+	
+	int c = 0;
+	int f = INT_MAX;
+	
+	rep(i,0,n){
+		if(f != arr[i]){
+			f = arr[i];
+			c++;
+		}
+	}
+	
+	cout << c;
+}

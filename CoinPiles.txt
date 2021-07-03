@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define pb push_back
+#define rep(i,a,b) for(int i = a;i<b;++i)
+#define rev(i,a,b) for(int i = a, i>b;--i)
+
+const long mod = 1000000007;
+
+int main(){
+	int t;
+	cin >> t;
+	
+	while(t--){
+		int a,b;
+		
+		cin >> a >> b;
+		
+		if((a+b)%3 == 0 && max(a,b) <= 2 * min(a,b)){
+			cout << "YES" <<'\n';
+		} else {
+			cout << "NO" << '\n';
+		}
+	}
+	
+}

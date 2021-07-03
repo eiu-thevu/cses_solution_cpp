@@ -1,0 +1,23 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+#define ll long long
+ 
+int main(){
+	string s;
+	cin >> s;
+	int c = 0, ans = 0;
+	char a = 'A';
+	
+	for(char b : s){
+		if(a == b){
+			++c;
+			ans = max(c,ans);
+		}else{
+			a = b;
+			c = 1;
+		}
+	}
+	
+	cout << ans;	
+}

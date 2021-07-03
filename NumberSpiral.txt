@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define pb push_back
+
+int main(){
+	int  t;
+	cin >> t;
+	
+	while (t--){
+		int x,y;
+		cin >> x >> y;
+		
+		ll v;
+		ll m = max(x,y);
+		ll m1 = (m -1) * (m - 1);
+		
+		if(m%2 == 0){
+			if(m == y){
+				v =m1 + x;
+			} else{
+				v = m1+ 2*m - y;
+			}
+		} else {
+			if(m == x){
+				v = m1+y;
+			} else {
+				v = m1+2*m - x;
+			}
+		}
+		
+		cout << v << '\n';
+	}
+}

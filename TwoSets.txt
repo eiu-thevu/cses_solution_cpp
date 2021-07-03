@@ -1,0 +1,44 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define pb push_back
+#define rep(i,a,b) for(int i = a;i<b;++i)
+#define rev(i,a,b) for(int i = a, i>b;--i)
+
+int main(){
+	ll n;
+	cin >> n;
+	
+	vector<ll> v1;
+	vector<ll> v2;
+	
+	ll sum = n * (n+1) /2;
+	
+	if (sum % 2 != 0){
+		cout << "NO";
+		return 0;
+	}
+	
+	sum /=2;
+	while(n > 0){
+		if(sum >= n){
+			v1.pb(n);
+			sum -= n;
+		} else {
+			v2.pb(n);
+		}
+		
+		n--;
+	}
+	cout << "YES" << '\n';
+	cout << v1.size() << '\n';
+	for(auto i : v1){
+		cout << i << " ";
+	}
+	
+	cout << '\n' << v2.size() << '\n';
+	for(auto i : v2){
+		cout << i << " ";
+	}
+}

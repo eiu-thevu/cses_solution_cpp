@@ -1,0 +1,37 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ll long long
+#define pb push_back
+
+int main(){
+	int n;
+	cin >> n;
+	
+	vector<int> v1;
+	vector<int> v2;
+	
+	if(n == 1){
+		cout << n;
+		return 0;
+	}
+	
+	if (n == 2 || n == 3){
+		cout << "NO SOLUTION";
+		return 0;
+	}
+	
+	for(int i = 1; i<=n;i++){
+		if(i % 2 == 0){
+			v1.pb(i);
+		} else{
+			v2.pb(i);
+		}
+	}
+	
+	for(auto i : v1)
+		cout << i << " ";
+		
+	for(auto i : v2)
+		cout << i << " ";
+}

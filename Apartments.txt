@@ -1,0 +1,53 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+#define ll long long
+#define pb push_back
+#define rep(i,a,b) for(int i = a;i<b;i++)
+#define rev(i,a,b) for(int i = a;i>b;i--)
+ 
+const long mod = 1000000007;
+ 
+int main(){
+	int n ,m ,k;
+	cin >> n >> m >> k;
+	
+	vector<int> v1;
+	vector<int> v2;
+	
+	rep(i,0,n){
+		int a;
+		cin >> a;
+		v1.pb(a);
+	}
+	
+	rep(i,0,m){
+		int a;
+		cin >> a;
+		v2.pb(a);
+	}
+	
+	sort(v1.begin(), v1.end());
+	sort(v2.begin(), v2.end());
+	
+	int i = 0, j = 0;
+	int c =0;
+	
+	while(i<n && j <m){
+		if(abs(v2[j] - v1[i]) <=k){
+			i++;
+			j++;
+			c++;
+			continue;
+		}
+		
+		if(v1[i] < v2[j] - k){
+			i++;
+			continue;
+		}
+		
+		j++;
+	}
+	
+	cout << c;
+}

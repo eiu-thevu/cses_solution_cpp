@@ -1,0 +1,35 @@
+#include <bits/stdc++.h>
+using namespace std;
+ 
+#define ll long long
+#define pb push_back
+#define rep(i,a,b) for(int i = a;i<b;i++)
+#define rev(i,a,b) for(int i = a;i>b;i--)
+ 
+const long mod = 1000000007;
+ 
+int main(){
+	int n;
+	cin >> n;
+	
+	if(n<=0){
+		return 0;
+	}
+	
+	vector<string> v;
+	
+	v.pb("0");
+	v.pb("1");
+	
+	for(int i = 2; i<(1<<n);i = i <<1){
+		rev(j,i-1,-1) v.pb(v[j]);
+		
+		rep(j,0,i) v[j] = "0" + v[j];
+		
+		rep(j,i,2*i) v[j] = "1" + v[j];
+	}
+	
+	rep(i,0,v.size()){
+		cout << v[i] << endl;
+	}
+}
